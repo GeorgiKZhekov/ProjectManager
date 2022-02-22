@@ -1,0 +1,15 @@
+﻿@using ProjectManager.Views.Shared
+@model IEnumerable<ProjectManager.Models.Course>
+
+@{
+    ViewData["Title"] = "Courses";
+}
+
+<h2>Courses</h2>
+    
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+@(await Html.RenderComponentAsync<CoursesList>(RenderMode.ServerPrerendered, new { Courses = Model }))
+

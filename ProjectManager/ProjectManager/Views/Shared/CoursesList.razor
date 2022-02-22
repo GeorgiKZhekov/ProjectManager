@@ -1,0 +1,50 @@
+﻿@using Microsoft.AspNetCore.Components
+@using ProjectManager.Models
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Number
+            </th>
+            <th>
+                Title
+            </th>
+            <th>
+                Credits
+            </th>
+            <th>
+                Department
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Courses)
+        {
+            <tr>
+                <td>
+                    @item.CourseId
+                </td>
+                <td>
+                    @item.Title
+                </td>
+                <td>
+                    @item.Credits
+                </td>
+                <td>
+                    @item.DepartmentName
+                </td>
+                <td>
+                    <a href="Courses/Edit/@item.CourseId">Edit</a> |
+                    <a href="Courses/Details/@item.CourseId">Details</a> |
+                    <a href="Courses/Delete/@item.CourseId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    [Parameter] public IEnumerable<Course> Courses { get; set; }
+}
