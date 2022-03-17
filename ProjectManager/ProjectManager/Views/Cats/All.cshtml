@@ -1,0 +1,22 @@
+﻿@model List<CatViewModel>
+
+@{
+    ViewData["Title"] = "AllCats";
+}
+
+@section Styles
+{
+    <link href="~/css/cats.css" rel="stylesheet"/>
+}
+
+
+@foreach (var cat in Model)
+{
+    <h1 class="cats"> @cat.Name is @cat.Age years old.</h1>
+}
+
+@section Scripts{
+    <script>
+        document.getElementsByClassName('cats')[0].innerHTML = '<li>Changed by the script</li>'
+    </script>
+}

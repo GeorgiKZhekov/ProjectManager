@@ -47,4 +47,15 @@
 
 @code {
     [Parameter] public IEnumerable<Course> Courses { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Courses = new List<Course>
+        {
+            new Course{CourseId = 1, Credits = 10, DepartmentName = "IT", Title = "DOTNET"},
+            new Course{CourseId = 2, Credits = 20, DepartmentName = "PT", Title = "Project Managament"},
+            new Course{CourseId = 3, Credits = 30, DepartmentName = "FP", Title = "Verpacken"}
+        };
+    }
+
 }
