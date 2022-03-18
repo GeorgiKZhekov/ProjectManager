@@ -12,7 +12,7 @@
 
 @foreach (var cat in Model)
 {
-    <h1 class="cats"> @cat.Name is @cat.Age years old.</h1>
+    <partial name="_Cat" model="cat"/>
 }
 
 @section Scripts{
